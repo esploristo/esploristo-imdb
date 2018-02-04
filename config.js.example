@@ -1,0 +1,10 @@
+'use strict'
+let config = {};
+// https://console.aws.amazon.com/iam/home#/users
+config.accesKeyId = '';
+config.secret = '';
+// https://s3.console.aws.amazon.com/s3/home
+config.bucketName = '';
+config.region = '';
+config.date = 'YYYY-MM-DD';
+module.exports = config;
