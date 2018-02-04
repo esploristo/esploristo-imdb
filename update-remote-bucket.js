@@ -5,12 +5,12 @@ let updateRemoteBucket = function () {
 	let date = config.date;
 	console.log(`Start update remote on aws s3 bucket for ${date}`);
 	let filenames = [
+		'name.basics.tsv.gz'
 		'title.basics.tsv.gz',
 		'title.crew.tsv.gz',
 		'title.episode.tsv.gz',
 		'title.principals.tsv.gz',
-		'title.ratings.tsv.gz',
-		'name.basics.tsv.gz'
+		'title.ratings.tsv.gz'
 	];
 	let srcBucketName = 'imdb-datasets';
 	let srcKeyPrefix = 'documents/v1/' + date + '/'; 
