@@ -91,6 +91,20 @@ const generateTsv3 = function (linesCount) {
 	});
 	lr.on('end', function () {
 		console.log('100%');
+		exec(`wc -l ${fileName}`, function (error, results) {
+			if(error) {
+				return logError(error);
+			} else {
+				console.log(`File in : ${results}`);
+				exec(`wc -l ${movieTsvFile}`, function (error, results) {
+					if(error) {
+						return logError(error);
+					} else {
+						console.log(`File out : ${results}`);
+					}
+				});
+			}
+		});
 	});
 };
 
