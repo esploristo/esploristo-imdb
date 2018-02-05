@@ -5,7 +5,7 @@ let updateRemoteBucket = function () {
 	let date = config.date;
 	console.log(`Start update remote on aws s3 bucket for ${date}`);
 	let filenames = [
-		'name.basics.tsv.gz'
+		'name.basics.tsv.gz',
 		'title.basics.tsv.gz',
 		'title.crew.tsv.gz',
 		'title.episode.tsv.gz',

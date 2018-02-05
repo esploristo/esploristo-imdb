@@ -7,4 +7,46 @@ config.secret = '';
 config.bucketName = '';
 config.region = '';
 config.date = 'YYYY-MM-DD';
+config.types = [
+	'movie',
+	'short',
+	'tvEpisode',
+	'tvMiniSeries',
+	'tvMovie',
+	'tvSeries',
+	'tvShort',
+	'tvSpecial',
+	'video',
+	'videoGame',
+];
+config.genres = [
+	'Adventure',
+	'Crime',
+	'Short',
+	'Adult',
+	'Drama',
+	'Romance',
+	'Action',
+	'Western',
+	'Comedy',
+	'Horror',
+	'Thriller',
+	'Documentary',
+	'War',
+	'Music',
+	'Family',
+	'Biography',
+	'Fantasy',
+	'Musical',
+	'Mystery',
+	'Sci-Fi',
+	'Sport',
+	'Animation',
+	'Talk-Show',
+	'Game-Show',
+	'History',
+	'Reality-TV',
+	'News',
+	'Film-Noir',
+];
 module.exports = config;

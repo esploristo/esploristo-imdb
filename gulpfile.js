@@ -2,9 +2,14 @@ const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const updateRemoteBucket = require('./update-remote-bucket');
 const downloadBucket = require('./download-bucket');
+const generateTsv = require('./generate-tsv');
 
 gulp.task('download-bucket', function() {
 	downloadBucket();
+});
+
+gulp.task('generate-tsv', function() {
+	generateTsv();
 });
 
 gulp.task('lint', function() {
