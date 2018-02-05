@@ -12,4 +12,5 @@ gedit config.js;
 ```
 gulp update-remote
 gulp download-bucket
+gulp generate-tsv
 ```
