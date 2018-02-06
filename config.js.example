@@ -19,34 +19,123 @@ config.types = [
 	'video',
 	'videoGame',
 ];
-config.genres = [
-	'Adventure',
-	'Crime',
-	'Short',
-	'Adult',
-	'Drama',
-	'Romance',
-	'Action',
-	'Western',
-	'Comedy',
-	'Horror',
-	'Thriller',
-	'Documentary',
-	'War',
-	'Music',
-	'Family',
-	'Biography',
-	'Fantasy',
-	'Musical',
-	'Mystery',
-	'Sci-Fi',
-	'Sport',
-	'Animation',
-	'Talk-Show',
-	'Game-Show',
-	'History',
-	'Reality-TV',
-	'News',
-	'Film-Noir',
-];
+let i = 0;
+config.genres = {
+	'Adventure': {
+		'id': i++,
+		'idStr': 'adventure'
+	},
+	'Crime': {
+		'id': i++,
+		'idStr': 'crime'
+	},
+	'Short': {
+		'id': i++,
+		'idStr': 'short'
+	},
+	'Adult': {
+		'id': i++,
+		'idStr': 'adult'
+	},
+	'Drama': {
+		'id': i++,
+		'idStr': 'drama'
+	},
+	'Romance': {
+		'id': i++,
+		'idStr': 'romance'
+	},
+	'Action': {
+		'id': i++,
+		'idStr': 'action'
+	},
+	'Western': {
+		'id': i++,
+		'idStr': 'western'
+	},
+	'Comedy': {
+		'id': i++,
+		'idStr': 'comedy'
+	},
+	'Horror': {
+		'id': i++,
+		'idStr': 'horror'
+	},
+	'Thriller': {
+		'id': i++,
+		'idStr': 'thriller'
+	},
+	'Documentary': {
+		'id': i++,
+		'idStr': 'documentary'
+	},
+	'War': {
+		'id': i++,
+		'idStr': 'war'
+	},
+	'Music': {
+		'id': i++,
+		'idStr': 'music'
+	},
+	'Family': {
+		'id': i++,
+		'idStr': 'family'
+	},
+	'Biography': {
+		'id': i++,
+		'idStr': 'biography'
+	},
+	'Fantasy': {
+		'id': i++,
+		'idStr': 'fantasy'
+	},
+	'Musical': {
+		'id': i++,
+		'idStr': 'musical'
+	},
+	'Mystery': {
+		'id': i++,
+		'idStr': 'mystery'
+	},
+	'Sci-Fi': {
+		'id': i++,
+		'idStr': 'sci-fi'
+	},
+	'Sport': {
+		'id': i++,
+		'idStr': 'sport'
+	},
+	'Animation': {
+		'id': i++,
+		'idStr': 'animation'
+	},
+	'Talk-Show': {
+		'id': i++,
+		'idStr': 'talk-show'
+	},
+	'Game-Show': {
+		'id': i++,
+		'idStr': 'game-show'
+	},
+	'History': {
+		'id': i++,
+		'idStr': 'history'
+	},
+	'Reality-TV': {
+		'id': i++,
+		'idStr': 'reality-tv'
+	},
+	'News': {
+		'id': i++,
+		'idStr': 'news'
+	},
+	'Film-Noir': {
+		'id': i++,
+		'idStr': 'film-noir'
+	},
+};
+config.genresById = [];
+for (const k in config.genres) {
+	config.genresById[parseInt(config.genres[k].id)] = config.genres[k].idStr;
+}
 module.exports = config;

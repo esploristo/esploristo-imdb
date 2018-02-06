@@ -11,7 +11,7 @@ const folderPath = `/home/user/esploristo-imdb/data/imdb/documents/v1/${date}`;
 const fileName = `${folderPath}/title.basics.tsv`;
 const movieTsvFile = `${folderPath}/movie.tsv`;
 const types = config.types;
-const genres = config.genres;
+const genresById = config.genresById;
 const separator = '\t';
 const s = separator;
 const testEnabled = false;
@@ -21,6 +21,7 @@ const logError = function(message, line) {
 };
 
 const generateTsv = function () {
+	console.log(config.genresById);
 	if(fs.existsSync(movieTsvFile)) {
 		fs.unlink(movieTsvFile, function(error) {
 			if(error) {
@@ -76,10 +77,11 @@ const generateTsv3 = function (linesCount) {
 		let lineGenres = elements[8] || null;
 		lineGenres = lineGenres.split(',');
 		lineGenres = lineGenres.filter(function(genre) {
-			if(genre === '\\N') {
+			genre = genre.toLowerCase();
+			if(genre === '\\n') {
 				return false;
 			}
-			let b = genres.includes(genre);
+			let b = genresById.includes(genre);
 			if(!b) {
 				logError(`Genre should not be ${genre}`, i);
 			}
