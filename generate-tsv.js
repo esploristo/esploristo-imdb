@@ -23,7 +23,7 @@ const testEnabled = false;
 const headers = {
 	movie: 'imdb_id\ttype\toriginal_title\tprimary_title\tstart_year\tend_year\truntime\tgenres',
 	genre: 'id\tid_str\tid_str_up',
-	movieGenre: 'imdb_id\tgenre_id'
+	movieGenre: 'movie_imdb_id\tgenre_id'
 };
 
 const logError = function(message, line) {
