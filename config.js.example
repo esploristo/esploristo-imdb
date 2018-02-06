@@ -19,8 +19,8 @@ config.types = [
 	'video',
 	'videoGame',
 ];
-let i = 0;
-config.genres = {
+let i = 1;
+let genres = {
 	'Adventure': {
 		'id': i++,
 		'idStr': 'adventure'
@@ -134,8 +134,15 @@ config.genres = {
 		'idStr': 'film-noir'
 	},
 };
-config.genresById = [];
-for (const k in config.genres) {
-	config.genresById[parseInt(config.genres[k].id)] = config.genres[k].idStr;
+config.genres = [];
+config.genresStrById = [];
+config.genresStrUpById = [];
+for (const k in genres) {
+	genres[k].idStrUp = k;
+	config.genresStrById[parseInt(genres[k].id)] = genres[k].idStr;
+	config.genresStrUpById[parseInt(genres[k].id)] = genres[k].idStrUp;
+	config.genres[parseInt(genres[k].id)] = genres[k];
+	config.genres[genres[k].idStr] = genres[k];
+	config.genres[genres[k].idStrUp] = genres[k];
 }
 module.exports = config;

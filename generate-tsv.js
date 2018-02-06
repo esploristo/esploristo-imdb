@@ -11,17 +11,23 @@ const folderPath = `/home/user/esploristo-imdb/data/imdb/documents/v1/${date}`;
 const fileName = `${folderPath}/title.basics.tsv`;
 const movieTsvFile = `${folderPath}/movie.tsv`;
 const types = config.types;
-const genresById = config.genresById;
+// const genresStrById = config.genresStrById;
+const genresStrUpById = config.genresStrUpById;
 const separator = '\t';
 const s = separator;
+const warningEnabled = false;
 const testEnabled = false;
 
 const logError = function(message, line) {
 	console.error(chalk.red(`Line ${line} : ${message}`));
 };
+const logWarning = function(message, line) {
+	if(warningEnabled) {
+		console.warn(chalk.yellow(`Line ${line} : ${message}`));
+	}
+};
 
 const generateTsv = function () {
-	console.log(config.genresById);
 	if(fs.existsSync(movieTsvFile)) {
 		fs.unlink(movieTsvFile, function(error) {
 			if(error) {
@@ -76,14 +82,14 @@ const generateTsv3 = function (linesCount) {
 		let runtime = parseInt(elements[7]) || null;
 		let lineGenres = elements[8] || null;
 		lineGenres = lineGenres.split(',');
-		lineGenres = lineGenres.filter(function(genre) {
-			genre = genre.toLowerCase();
-			if(genre === '\\n') {
+		lineGenres = lineGenres.filter(function(genreStrUp) {
+			if(genreStrUp === '\\N') {
+				logWarning(`No genre`, i);
 				return false;
 			}
-			let b = genresById.includes(genre);
+			let b = genresStrUpById.includes(genreStrUp);
 			if(!b) {
-				logError(`Genre should not be ${genre}`, i);
+				logError(`Genre should not be ${genreStrUp}`, i);
 			}
 			return b;
 		});
