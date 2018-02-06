@@ -137,12 +137,13 @@ let genres = {
 config.genres = [];
 config.genresStrById = [];
 config.genresStrUpById = [];
-for (const k in genres) {
-	genres[k].idStrUp = k;
-	config.genresStrById[parseInt(genres[k].id)] = genres[k].idStr;
-	config.genresStrUpById[parseInt(genres[k].id)] = genres[k].idStrUp;
-	config.genres[parseInt(genres[k].id)] = genres[k];
-	config.genres[genres[k].idStr] = genres[k];
-	config.genres[genres[k].idStrUp] = genres[k];
+for (const key in genres) {
+	let id = parseInt(genres[key].id);
+	genres[key].idStrUp = key;
+	config.genresStrById[id] = genres[key].idStr;
+	config.genresStrUpById[id] = genres[key].idStrUp;
+	config.genres[id] = genres[key];
+	config.genres[genres[key].idStr] = genres[key];
+	config.genres[genres[key].idStrUp] = genres[key];
 }
 module.exports = config;
